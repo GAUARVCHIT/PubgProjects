@@ -1,0 +1,52 @@
+<!DOCTYPE html>                             
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        table {
+          width:100%;
+        }
+        table tr:nth-child(even) {
+          background-color: #eee;
+        }
+        table tr:nth-child(odd) {
+         background-color: #fff;
+        }
+        table th {
+          background-color: black;
+          color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{tournament.name}}</h1>
+    <h3>Result:-</h3>
+        <table style="width:100%" text-align="Center">
+
+            <tr>
+                <th>Team Name</th>
+                <th>PositionPoints</th>
+                <th>Kills</th>
+                <th>TotalPoints</th>
+            </tr>
+
+            {% for i in resultList %}
+                <tr>
+                    <td>{{i.teamname}}</td>
+                    <td>{{i.totalplacementpoint}}</td>
+                    <td>{{i.totalkills}}</td>
+                    <td>{{i.totalPoints}}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+
+
+    <h3>Matches Played</h3>
+    {% for match in matchPlayed %}
+        <!-- <p><a href="{% url 'match' match.id %}">{{match}}</a></p> -->
+    {% endfor %}
+</body>
+</html>
