@@ -12,6 +12,12 @@ def home(request):
 
     return render(request,'pubg/home.html')
 
+def pubgMainPage(request):
+    return render(request,'pubg/pubg.html')
+
+def singleMainTournament(request):
+    return render(request, 'pubg/singleTournament.html')
+
 def firstPage(request):
     results=Results.objects.filter( matches__id='15').order_by('-Total_points','-kill_points')
     map=Matches.objects.get(id='15').maps.name

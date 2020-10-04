@@ -1,0 +1,323 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>singleTournament</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="{% static 'pubg/css/single.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'pubg/css/owl/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'pubg/css/owl/owl.theme.default.min.css' %}">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-md navbar-custom sticky-top">
+        <a class="navbar-brand" href="#"><img src="assets/img/logo.png"></a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="{% url 'pubg' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Players</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Teams</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tournaments</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    
+      <div class="container">
+        <main role="main">
+          <div id="tournament-result-section">
+            <article class="article-featured">
+              <div class="article-featured-main">
+                <img src="https://i.ibb.co/YTjdr54/43-437821-india-gate-delhi-high-resolution-full-hd-wallpapers1.jpg"
+                  loading="lazy" alt="" class="article-image">
+              </div>
+              <div class="article-featured-secondary">
+                <p class="article-featured-sub-subtitle">Upcoming Event</p>
+                <div>
+                  <p class="article-featured-heading">Pmpl Sa</p>
+                  <p class="article-featured-subheading">Pubg Mobile Pro League, South Asia</p>
+                </div>
+                <p class="article-featured-description">All tier-1 team will comete, to earn Pubg Mobile South Asia Crown
+                </p>
+                <div class="article-featured-icons">
+                  <div class="datetime-icon">
+                    <img src="{% static 'pubg/images/svg/Calender1.svg' %}" alt="" class="datetime-svg">
+                    <p class="icon-text">26, Sept</p>
+                  </div>
+                  <div class="prizepool-icon">
+                    <img src="{% static 'pubg/images/svg/prize1.svg' %}" alt="" class="prizepool-svg">
+                    <p class="icon-text">2,60,000</p>
+                  </div>
+                  <div class="teams-icon">
+                    <img src="{% static 'pubg/images/svg/team1.svg' %}" alt="" class="teams-svg">
+                    <p class="icon-text">16 Teams</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+    
+          </div>
+    
+    
+          <div class="group">
+            <div class="head">
+              <div class="">
+                <p class="heading">Teams</p>
+              </div>
+            </div>
+            <div class="owl-carousel owl-theme" id="tournament-teams">
+              <div class="item">
+                <div class="team-cards">
+                  <div class="team">
+                    <img src="http://placehold.it/640x640" alt="" class="team-image-1">
+                  </div>
+                  <div class="team">
+                    <img src="http://placehold.it/640x640" alt="" class="team-image-2">
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="team-cards">
+                  <div class="team">
+                    <img src="http://placehold.it/640x640" alt="" class="team-image-1">
+                  </div>
+                  <div class="team">
+                    <img src="http://placehold.it/640x640" alt="" class="team-image-2">
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="team-cards">
+                  <div class="team">
+                    <img src="http://placehold.it/640x640" alt="" class="team-image-1">
+                  </div>
+                  <div class="team">
+                    <img src="http://placehold.it/640x640" alt="" class="team-image-2">
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="team-cards">
+                  <div class="team">
+                    <img src="http://placehold.it/640x640" alt="" class="team-image-1">
+                  </div>
+                  <div class="team">
+                    <img src="http://placehold.it/640x640" alt="" class="team-image-2">
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="team-cards">
+                  <div class="team">
+                    <img src="http://placehold.it/640x640" alt="" class="team-image-1">
+                  </div>
+                  <div class="team">
+                    <img src="http://placehold.it/640x640" alt="" class="team-image-2">
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="team-cards">
+                  <div class="team">
+                    <img src="http://placehold.it/640x640" alt="" class="team-image-1">
+                  </div>
+                  <div class="team">
+                    <img src="http://placehold.it/640x640" alt="" class="team-image-2">
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="team-cards">
+                  <div class="team">
+                    <img src="http://placehold.it/640x640" alt="" class="team-image-1">
+                  </div>
+                  <div class="team">
+                    <img src="http://placehold.it/640x640" alt="" class="team-image-2">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="group">
+            <div class="head">
+              <div class="">
+                <p class="heading">Result</p>
+              </div>
+            </div>
+    
+            <table class="content-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Team</th>
+                  <th>Kills Pts</th>
+                  <th>Placement Pts</th>
+                  <th>Total Pts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Orange Rock</td>
+                  <td>10</td>
+                  <td>20</td>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Fnatic</td>
+                  <td>8</td>
+                  <td>14</td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>GodLike</td>
+                  <td>14</td>
+                  <td>10</td>
+                  <td>24</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>TeamIND</td>
+                  <td>2</td>
+                  <td>8</td>
+                  <td>10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    
+          <div class="group">
+            <div class="head">
+              <div class="">
+                <!-- <p class="heading"></p> -->
+              </div>
+            </div>
+            <div class="single-tournament-switch">
+              <div class="tournament-switch" id="switch-result">
+                <a >Result</a>
+              </div>
+              <div class="tournament-switch" id="switch-details">
+                <a >Details</a>
+              </div>
+            </div>
+    
+            <div class="date-content-widget">
+              <div class="" id="tournament-total-schedule">
+                <div class="date-group-match-tile">
+                  <div class="match-tile-time">
+                    <p class="">7:30 PM</p>
+                  </div>
+                  <div class="match-tile-tournament">
+                    <p class="">PMPL SA</p>
+                  </div>
+                  <div class="match-tile-dayNoAmatchNo">
+                    <p class="match-tile-day">D-1</p>
+                    <p class="match-tile-matchNo">M-1</p>
+                  </div>
+                  <div class="match-tile-map">
+                    <p class="">ERANGEL</p>
+                  </div>
+                </div>
+                <div class="date-group-match-tile">
+                  <div class="match-tile-time">
+                    <p class="">7:30 PM</p>
+                  </div>
+                  <div class="match-tile-tournament">
+                    <p class="">PMPL SA</p>
+                  </div>
+                  <div class="match-tile-dayNoAmatchNo">
+                    <p class="match-tile-day">D-1</p>
+                    <p class="match-tile-matchNo">M-1</p>
+                  </div>
+                  <div class="match-tile-map">
+                    <p class="">ERANGEL</p>
+                  </div>
+                </div>
+                <div class="date-group-match-tile">
+                  <div class="match-tile-time">
+                    <p class="">7:30 PM</p>
+                  </div>
+                  <div class="match-tile-tournament">
+                    <p class="">PMPL SA</p>
+                  </div>
+                  <div class="match-tile-dayNoAmatchNo">
+                    <p class="match-tile-day">D-1</p>
+                    <p class="match-tile-matchNo">M-1</p>
+                  </div>
+                  <div class="match-tile-map">
+                    <p class="">ERANGEL</p>
+                  </div>
+                </div>
+              </div>
+              <div class="" id="tournament-total-details">
+              </div>
+            </div>
+          </div>
+    
+        </main>
+      </div>    
+
+    <script src="" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static '/pubg/js/owl/owl.carousel.min.js' %}"></script>
+
+    <script>
+        $(document).ready(function () {
+          $("#tournament-teams").owlCarousel({
+            margin: 13,
+            loop: true,
+            autoPlay: 10,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            autoplayHoverPause: true,
+    
+            responsive: {
+              0: {
+                items: 2
+              },
+              600: {
+                items: 3.5
+              },
+              1000: {
+                items: 5
+              }
+            }
+          });
+        });
+      </script>
+      
+      <script>
+        $(function () {
+          $('#switch-result').click(function () {
+            $('div[id^=tournament-total-]').hide();
+            $('#tournament-total-schedule').show();
+          });
+          $('#switch-details').click(function () {
+            $('div[id^=tournament-total-]').hide();
+            $('#tournament-total-details').show();
+          });
+        })
+      </script>
+    
+</body>
+</html>
