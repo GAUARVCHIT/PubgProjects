@@ -47,23 +47,23 @@
               <div class="article-featured-secondary">
                 <p class="article-featured-sub-subtitle">Upcoming Event</p>
                 <div>
-                  <p class="article-featured-heading">Pmpl Sa</p>
-                  <p class="article-featured-subheading">Pubg Mobile Pro League, South Asia</p>
+                  <p class="article-featured-heading">{{tournament.short_name}}</p>
+                  <p class="article-featured-subheading">{{tournament.name}}</p>
                 </div>
                 <p class="article-featured-description">All tier-1 team will comete, to earn Pubg Mobile South Asia Crown
                 </p>
                 <div class="article-featured-icons">
                   <div class="datetime-icon">
                     <img src="{% static 'pubg/images/svg/Calender1.svg' %}" alt="" class="datetime-svg">
-                    <p class="icon-text">26, Sept</p>
+                    <p class="icon-text">{{tournament.starting_date|date:"j, M"}}</p>
                   </div>
                   <div class="prizepool-icon">
                     <img src="{% static 'pubg/images/svg/prize1.svg' %}" alt="" class="prizepool-svg">
-                    <p class="icon-text">2,60,000</p>
+                    <p class="icon-text">{{tournament.prize_pool}}</p>
                   </div>
                   <div class="teams-icon">
                     <img src="{% static 'pubg/images/svg/team1.svg' %}" alt="" class="teams-svg">
-                    <p class="icon-text">16 Teams</p>
+                    <p class="icon-text">{{tournament.teams.count}} Teams</p>
                   </div>
                 </div>
               </div>
@@ -170,34 +170,15 @@
                 </tr>
               </thead>
               <tbody>
+                {% for finalResult in resultList %}
                 <tr>
-                  <td>1</td>
-                  <td>Orange Rock</td>
-                  <td>10</td>
-                  <td>20</td>
-                  <td>30</td>
+                  <td>{{forloop.counter}}</td>
+                  <td>{{finalResult.teamname}}</td>
+                  <td>{{finalResult.totalkills}}</td>
+                  <td>{{finalResult.totalplacementpoint}}</td>
+                  <td>{{finalResult.totalPoints}}</td>
                 </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Fnatic</td>
-                  <td>8</td>
-                  <td>14</td>
-                  <td>22</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>GodLike</td>
-                  <td>14</td>
-                  <td>10</td>
-                  <td>24</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>TeamIND</td>
-                  <td>2</td>
-                  <td>8</td>
-                  <td>10</td>
-                </tr>
+                {% endfor %}
               </tbody>
             </table>
           </div>
@@ -219,53 +200,25 @@
     
             <div class="date-content-widget">
               <div class="" id="tournament-total-schedule">
-                <div class="date-group-match-tile">
-                  <div class="match-tile-time">
-                    <p class="">7:30 PM</p>
+                {% for matches in matchesPlayed%}
+                <a href="{% url 'singleMatch' matches.id %}" class="" style="text-decoration: none;">
+                  <div class="date-group-match-tile">
+                    <div class="match-tile-time">
+                      <p class="">{{matches.match_starting_time|time:"h:i a"}}</p>
+                    </div>
+                    <div class="match-tile-tournament">
+                      <p class="">{{matches.total_tournament.short_name}}</p>
+                    </div>
+                    <div class="match-tile-dayNoAmatchNo">
+                      <p class="match-tile-day">D-1</p>
+                      <p class="match-tile-matchNo">M-1</p>
+                    </div>
+                    <div class="match-tile-map">
+                      <p class="">{{matches.maps}}</p>
+                    </div>
                   </div>
-                  <div class="match-tile-tournament">
-                    <p class="">PMPL SA</p>
-                  </div>
-                  <div class="match-tile-dayNoAmatchNo">
-                    <p class="match-tile-day">D-1</p>
-                    <p class="match-tile-matchNo">M-1</p>
-                  </div>
-                  <div class="match-tile-map">
-                    <p class="">ERANGEL</p>
-                  </div>
-                </div>
-                <div class="date-group-match-tile">
-                  <div class="match-tile-time">
-                    <p class="">7:30 PM</p>
-                  </div>
-                  <div class="match-tile-tournament">
-                    <p class="">PMPL SA</p>
-                  </div>
-                  <div class="match-tile-dayNoAmatchNo">
-                    <p class="match-tile-day">D-1</p>
-                    <p class="match-tile-matchNo">M-1</p>
-                  </div>
-                  <div class="match-tile-map">
-                    <p class="">ERANGEL</p>
-                  </div>
-                </div>
-                <div class="date-group-match-tile">
-                  <div class="match-tile-time">
-                    <p class="">7:30 PM</p>
-                  </div>
-                  <div class="match-tile-tournament">
-                    <p class="">PMPL SA</p>
-                  </div>
-                  <div class="match-tile-dayNoAmatchNo">
-                    <p class="match-tile-day">D-1</p>
-                    <p class="match-tile-matchNo">M-1</p>
-                  </div>
-                  <div class="match-tile-map">
-                    <p class="">ERANGEL</p>
-                  </div>
-                </div>
-              </div>
-              <div class="" id="tournament-total-details">
+                </a>
+                {% endfor %}
               </div>
             </div>
           </div>
