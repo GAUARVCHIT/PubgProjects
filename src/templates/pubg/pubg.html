@@ -54,12 +54,31 @@
                   alt="" class="owl-lazy article-image">
               </div>
               <div class="article-featured-secondary">
-                <p class="article-featured-sub-subtitle">Upcoming</p>
-                <p class="article-featured-heading">{{impTournament.short_name}}</p>
-                <p class="article-featured-subheading">{{impTournament.name}}</p>
-                <p class="article-featured-description">All tier-1 team will comete, to earn Pubg Mobile South Asia Crown
-                </p>
-                <a href=""></a>
+                {% if impTournament.upcomingTournament %}
+                  <div class="">
+                    <p class="article-featured-sub-subtitle">Upcoming</p>
+                  </div>
+
+                {% elif impTournament.ongoingTournament %}
+                  <div class="">
+                    <p class="article-featured-sub-subtitle">Ongoing</p>
+                  </div>
+
+                {% elif impTournament.endedTournament %}
+                  <div class="">
+                    <p class="article-featured-sub-subtitle">Ended</p>
+                  </div>
+                {% endif %}
+
+                <div class="">
+                  <p class="article-featured-heading">{{impTournament.short_name}}</p>
+                  <p class="article-featured-subheading">{{impTournament.name}}</p>
+                </div>
+                
+                <div class="">
+                  <p class="article-featured-description">All tier-1 team will compitete, to earn Pubg Mobile South Asia Crown</p>
+                </div>
+
                 <div class="article-featured-icons">
                   <div class="datetime-icon">
                     <img src="{% static 'pubg/images/svg/Calender1.svg' %}" alt="" class="datetime-svg">
@@ -67,7 +86,7 @@
                   </div>
                   <div class="prizepool-icon">
                     <img src="{% static 'pubg/images/svg/prize1.svg' %}" alt="" class="prizepool-svg">
-                    <p class="icon-text">{{impTournament.prize_pool}}</p>
+                    <p class="icon-text">₹ {{impTournament.prize_pool}}</p>
                   </div>
                   <div class="teams-icon">
                     <img src="{% static 'pubg/images/svg/team1.svg' %}" alt="" class="teams-svg">

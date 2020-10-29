@@ -44,6 +44,11 @@ def pubgMainPage(request):
     
     print('matchOnNow', matchOnNow.count())
 
+    for i in noOfImpTournaments:
+        print('upcomingTournament',i.short_name, i.upcomingTournament)
+        print('OngoingTournament',i.short_name, i.ongoingTournament)
+        print('EndedTournament',i.short_name, i.endedTournament)
+
     context={
         'ImpTournamentsIn7Days': noOfImpTournaments,
         'TournamentsIn7Days': noOfTournaments,

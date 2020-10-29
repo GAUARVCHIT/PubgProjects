@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 # Create your models here.
 class Seasons(models.Model):
     name=models.CharField(max_length=50,null=True)
@@ -146,8 +146,8 @@ class TotalTournament(models.Model):
     short_name=models.CharField(max_length=20,null=True,blank=True)
     teams= models.ManyToManyField(Teams,related_name='teams_participating_in_tournaments')
     description=models.TextField(blank=True,null=True)
-    starting_date=models.DateField(auto_now_add=False,null=True,blank=True)
-    endings_date=models.DateField(auto_now_add=False,null=True,blank=True)
+    starting_date=models.DateTimeField(auto_now_add=False,null=True,blank=True)
+    endings_date=models.DateTimeField(auto_now_add=False,null=True,blank=True)
     subtournament=models.OneToOneField('self',blank=True,null=True,on_delete=models.SET_NULL)
     tags=models.ManyToManyField(TournamentTags,blank=True)
     prize_pool=models.PositiveIntegerField(null=True,blank=True,default=0)
@@ -158,6 +158,18 @@ class TotalTournament(models.Model):
 
     def __str__(self):
         return self.short_name
+
+    @property
+    def upcomingTournament(self):
+        return self.starting_date > timezone.now()
+
+    @property
+    def ongoingTournament(self):
+        return self.starting_date <= timezone.now() and self.endings_date >= timezone.now()
+
+    @property
+    def endedTournament(self):
+        return self.endings_date < timezone.now()
 
 class Prize(models.Model):
     tournament=models.ForeignKey(TotalTournament,null=True,on_delete=models.CASCADE)
