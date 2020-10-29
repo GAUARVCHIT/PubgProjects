@@ -132,6 +132,15 @@ class TournamentTags(models.Model):
 
 
 class TotalTournament(models.Model):
+
+    priorityLevel = (
+        ('1', '1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
+        ('5', '5'),
+    )
+
     season= models.ForeignKey(Seasons,null=True, on_delete=models.SET_NULL)
     name=models.CharField(max_length=100,null=True)
     short_name=models.CharField(max_length=20,null=True,blank=True)
@@ -139,10 +148,10 @@ class TotalTournament(models.Model):
     description=models.TextField(blank=True,null=True)
     starting_date=models.DateField(auto_now_add=False,null=True,blank=True)
     endings_date=models.DateField(auto_now_add=False,null=True,blank=True)
-
     subtournament=models.OneToOneField('self',blank=True,null=True,on_delete=models.SET_NULL)
     tags=models.ManyToManyField(TournamentTags,blank=True)
     prize_pool=models.PositiveIntegerField(null=True,blank=True,default=0)
+    priorites=models.CharField(null=True,blank=False,choices=priorityLevel,max_length=4)
 
     class Meta:
         verbose_name_plural = "TotalTournament"

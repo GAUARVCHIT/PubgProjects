@@ -44,6 +44,7 @@
     <main role="main">
       <!-- Pk Crousel -->
       <div class="owl-carousel owl-theme" id="pk">
+        {% for mostImpTournament in mostImpTournaments %}
         <div class="item">
           <article class="article-featured">
             <div class="article-featured-main">
@@ -54,8 +55,8 @@
             <div class="article-featured-secondary">
               <p class="article-featured-sub-subtitle">Upcoming Event</p>
               <div>
-                <p class="article-featured-heading">Pmpl Sa</p>
-                <p class="article-featured-subheading">Pubg Mobile Pro League, South Asia</p>
+                <p class="article-featured-heading">{{mostImpTournament.short_name}}</p>
+                <p class="article-featured-subheading">{{mostImpTournament.name}}</p>
               </div>
               <p class="article-featured-description">All tier-1 team will comete, to earn Pubg Mobile South Asia Crown
               </p>
@@ -63,114 +64,22 @@
               <div class="article-featured-icons">
                 <div class="datetime-icon">
                   <img src="{% static 'pubg/images/svg/Calender1.svg' %}" alt="" class="datetime-svg">
-                  <p class="icon-text">26, Sept</p>
+                  <p class="icon-text">{{mostImpTournament.starting_date|date:"jS, M"}}</p>
                 </div>
                 <div class="prizepool-icon">
                   <img src="{% static 'pubg/images/svg/prize1.svg' %}" alt="" class="prizepool-svg">
-                  <p class="icon-text">2,60,000</p>
+                  <p class="icon-text">{{mostImpTournament.prize_pool}}</p>
                 </div>
                 <div class="teams-icon">
                   <img src="{% static 'pubg/images/svg/team1.svg' %}" alt="" class="teams-svg">
-                  <p class="icon-text">16 Teams</p>
+                  <p class="icon-text">{{mostImpTournament.teams.count}}, Teams</p>
                 </div>
               </div>
             </div>
             <a href="https://www.epicgames.com/store/en-US/" class="fill-div"></a>
           </article>
         </div>
-        <div class="item">
-          <article class="article-featured">
-            <div class="article-featured-main">
-              <img
-                data-src="https://i.ibb.co/YTjdr54/43-437821-india-gate-delhi-high-resolution-full-hd-wallpapers1.jpg"
-                alt="" class="owl-lazy article-image">
-            </div>
-            <div class="article-featured-secondary">
-              <p class="article-featured-sub-subtitle">Upcoming</p>
-              <p class="article-featured-heading">Pmpl Sa</p>
-              <p class="article-featured-subheading">Pubg Mobile Pro League, South Asia</p>
-              <p class="article-featured-description">All tier-1 team will comete, to earn Pubg Mobile South Asia Crown
-              </p>
-              <a href=""></a>
-              <div class="article-featured-icons">
-                <div class="datetime-icon">
-                  <img src="{% static 'pubg/images/svg/Calender1.svg' %}" alt="" class="datetime-svg">
-                  <p class="icon-text">26, Sept</p>
-                </div>
-                <div class="prizepool-icon">
-                  <img src="{% static 'pubg/images/svg/prize1.svg' %}" alt="" class="prizepool-svg">
-                  <p class="icon-text">2,60,000</p>
-                </div>
-                <div class="teams-icon">
-                  <img src="{% static 'pubg/images/svg/team1.svg' %}" alt="" class="teams-svg">
-                  <p class="icon-text">16 Teams</p>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-        <div class="item">
-          <article class="article-featured">
-            <div class="article-featured-main">
-              <img
-                data-src="https://i.ibb.co/YTjdr54/43-437821-india-gate-delhi-high-resolution-full-hd-wallpapers1.jpg"
-                alt="" class="owl-lazy article-image">
-            </div>
-            <div class="article-featured-secondary">
-              <p class="article-featured-sub-subtitle">Upcoming</p>
-              <p class="article-featured-heading">Pmpl Sa</p>
-              <p class="article-featured-subheading">Pubg Mobile Pro League, South Asia</p>
-              <p class="article-featured-description">All tier-1 team will comete, to earn Pubg Mobile South Asia Crown
-              </p>
-              <a href=""></a>
-              <div class="article-featured-icons">
-                <div class="datetime-icon">
-                  <img src="{% static 'pubg/images/svg/Calender1.svg' %}" alt="" class="datetime-svg">
-                  <p class="icon-text">26, Sept</p>
-                </div>
-                <div class="prizepool-icon">
-                  <img src="{% static 'pubg/images/svg/prize1.svg' %}" alt="" class="prizepool-svg">
-                  <p class="icon-text">2,60,000</p>
-                </div>
-                <div class="teams-icon">
-                  <img src="{% static 'pubg/images/svg/team1.svg' %}" alt="" class="teams-svg">
-                  <p class="icon-text">16 Teams</p>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-        <div class="item">
-          <article class="article-featured">
-            <div class="article-featured-main">
-              <img
-                data-src="https://i.ibb.co/YTjdr54/43-437821-india-gate-delhi-high-resolution-full-hd-wallpapers1.jpg"
-                alt="" class="owl-lazy article-image">
-            </div>
-            <div class="article-featured-secondary">
-              <p class="article-featured-sub-subtitle">Upcoming</p>
-              <p class="article-featured-heading">Pmpl Sa</p>
-              <p class="article-featured-subheading">Pubg Mobile Pro League, South Asia</p>
-              <p class="article-featured-description">All tier-1 team will compete, to earn Pubg Mobile South Asia Crown
-              </p>
-              <div class="article-featured-icons">
-                <div class="datetime-icon">
-                  <img src="{% static 'pubg/images/svg/Calender1.svg' %}" alt="" class="datetime-svg">
-                  <p class="icon-text">26, Sept</p>
-                </div>
-                <div class="prizepool-icon">
-                  <img src="{% static 'pubg/images/svg/prize1.svg' %}" alt="" class="prizepool-svg">
-                  <p class="icon-text">2,60,000</p>
-                </div>
-                <div class="teams-icon">
-                  <img src="{% static 'pubg/images/svg/team1.svg' %}" alt="" class="teams-svg">
-                  <p class="icon-text">16 Teams</p>
-                </div>
-              </div>
-              <a href=""></a>
-            </div>
-          </article>
-        </div>
+        {% endfor %}
       </div>
 
 

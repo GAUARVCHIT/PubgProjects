@@ -5,11 +5,20 @@ from .models import *
 from datetime import datetime, timedelta
 from django.utils import timezone
 from django.utils.timezone import localdate
+from django.db.models import Q
 
 # Create your views here.
 
 def home(request):
-    return render(request,'pubg/home.html')
+    todayDate= timezone.now()
+    noOfTournaments = TotalTournament.objects.exclude(starting_date__gt=todayDate+timedelta(days=3)).filter(starting_date__gte=todayDate-timedelta(days=3)).filter(priorites='5')|TotalTournament.objects.exclude(endings_date__gt=todayDate+timedelta(days=3)).filter(endings_date__gte=todayDate-timedelta(days=3)).filter(priorites='5')
+    print('Priorities', noOfTournaments)     
+    
+    context={
+        'mostImpTournaments': noOfTournaments,
+    }                                                                                                 ### number of tournament between starting and ending between 7 days
+
+    return render(request,'pubg/home.html',context)
 
 def pubgMainPage(request):
     # noOfTournaments = TotalTournament.objects.filter( pub_date__gte=datetime.now()-timedelta(days=7))   
@@ -21,9 +30,10 @@ def pubgMainPage(request):
     before1Day=todayDate-timedelta(days=1)
     before2Day=todayDate-timedelta(days=2)
     before3Day=todayDate-timedelta(days=3)
-
+    
     noOfTournaments = TotalTournament.objects.exclude(starting_date__gt=todayDate+timedelta(days=3)).filter(starting_date__gte=todayDate-timedelta(days=3))|TotalTournament.objects.exclude(endings_date__gt=todayDate+timedelta(days=3)).filter(endings_date__gte=todayDate-timedelta(days=3))
-                                                                                                            ### number of tournament between starting and ending between 7 days
+    noOfImpTournaments = noOfTournaments.filter(Q(priorites='5')|Q(priorites='4'))
+
     matchOn3afterDay = Matches.objects.filter(match_starting_time__date=after3Day)
     matchOn2afterDay = Matches.objects.filter(match_starting_time__date=after2Day)
     matchOn1afterDay = Matches.objects.filter(match_starting_time__date=after1Day)
@@ -35,6 +45,7 @@ def pubgMainPage(request):
     print('matchOnNow', matchOnNow.count())
 
     context={
+        'ImpTournamentsIn7Days': noOfImpTournaments,
         'TournamentsIn7Days': noOfTournaments,
         'matchOn3afterDay': matchOn3afterDay,
         'matchOn2afterDay': matchOn2afterDay,
