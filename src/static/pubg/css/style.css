@@ -266,7 +266,17 @@ html,body{
     border: none;
     margin-right: .5em;
     margin-bottom: .4em;
-    /* display: inline; */
+    display: inline-block;
+  }
+
+  .active{
+    background-color: #404040;
+    color: white;
+  }
+
+  .date-button-single:hover{
+    background-color: #404040;
+    color: white;
   }
 
   .date-group-match-tile{
@@ -375,6 +385,16 @@ html,body{
       width: 4.5rem;
       height: 4.5rem;
       margin-bottom: .5em;
+    }
+
+    .active{
+      background-color: #404040;
+      color: white;
+    }
+  
+    .date-button-single:hover{
+      background-color: #404040;
+      color: white;
     }
 
     .date-group-match-tile{

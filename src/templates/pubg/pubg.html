@@ -153,7 +153,7 @@
           <button id="date-button-1" class="date-button-single">{{after3Day|date:"d"}}</button>
           <button id="date-button-2" class="date-button-single">{{after2Day|date:"d"}}</button>
           <button id="date-button-3" class="date-button-single">{{after1Day|date:"d"}}</button>
-          <button id="date-button-4" class="date-button-single">{{today0Day|date:"d"}}</button>
+          <button id="date-button-4" class="date-button-single active">{{today0Day|date:"d"}}</button>
           <button id="date-button-5" class="date-button-single">{{before1Day|date:"d"}}</button>
           <button id="date-button-6" class="date-button-single">{{before2Day|date:"d"}}</button>
           <button id="date-button-7" class="date-button-single">{{before3Day|date:"d"}}</button>
@@ -383,6 +383,13 @@
         }
       });
     });
+  </script>
+
+  <script>
+    $('.date-button-single').click(function(){
+      $(".date-button-single").removeClass('active')
+      $(this).addClass('active');
+    })
   </script>
 
 
