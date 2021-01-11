@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700');
+
+:root{
+  --hover: #404040
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+    font-size: 1rem;
+    background-color:#121212;
+  }
+
+
+.navbar {
+    padding: .8rem;
+  }
+
+  .navbar-custom{
+    background-color: #2a2a2a;
+  }
+  
+  .custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(113,113,113, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+
+  .navbar-nav li{
+    padding-right: 20px;
+  }
+  
+  .nav-link{
+    font-size: 1.1em !important;
+    color: #727272;
+  }
+
+  .navbar-nav > li {
+    float: left;
+    position: relative;
+  }
+  
+  .navbar-light .navbar-nav .active a::after {
+    border-bottom: 5px solid #5bc0eb;
+    bottom: -10px;
+    content: " ";
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+
+  #beside1st{
+    height: 352px;
+    width: 397px;
+  }
+
+
+
+
+  .container{
+    width: 94%;
+    min-width: 320px;
+    padding: 0px 0px;
+    margin-top: 2rem;
+  }
+
+  /* featured article */
+  .article-featured{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .fill-div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .article-featured-main{
+    width: 100%;
+    background-color:  #2a2a2a;
+  }
+  
+  /* .article-featured-image{
+    max-width: 100%;    
+  } */
+
+  .article-featured-secondary{
+    padding: 2em;
+    background-color: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .article-featured-secondary:hover{
+    background-color: var(--hover);
+  }
+
+  .article-featured-sub-subtitle{
+    font-size: 1rem;
+    font-weight: 300;
+    color: #c9c9c9;
+  }
+
+  .article-featured-heading{
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 0rem;
+  }
+
+  .article-featured-subheading{
+    font-size: .6rem;
+    font-weight: 300;
+    color: #c9c9c9;
+    margin-top: 0rem;
+  }
+
+  .article-featured-description{
+    font-size: .8rem;
+    font-weight: 200;
+    color: #c9c9c9;
+  }
+
+  .article-featured-icons{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .datetime-svg{
+    display: block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+  }
+  
+  .prizepool-svg{
+    display: block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+  }
+  
+  .teams-svg{
+    display: block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+  }
+
+  .icon-text{
+    margin-top: .3rem;
+    font-size: .9rem;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  /* Tournament Card */
+
+  #tournament-slider{
+    margin-bottom: 2.5rem;
+  }
+
+  .card-tournament{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-primary{
+    width: 100%;
+    height: auto;
+  }
+
+  .card-secondary{
+    width: 100%;  
+    height: auto;
+    color: #c9c9c9;
+    padding: .3rem;
+    margin: 0px 0px;
+  }
+
+  .card-secondary:hover{
+    background-color: var(--hover);
+    transition: all .7s;
+  }
+
+  .card-title{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+  }
+
+  .card-date-prize{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+
+  .card-icon{
+    width: 1.2rem;
+    height: 1.2rem;
+    text-align: center;
+  }
+
+  .card-icon-text{
+    text-align: center;
+    margin-top: .3rem;
+    color: #ffffff;
+    font-weight: 300;
+    font-size: .8rem;
+    margin-bottom: 0rem ;
+  }
+
+  .card-subtitle{
+    
+  }
+
+  .card-tournament-prize{
+
+  }
+
+  /* Date Section CSS ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+  .head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  .group .heading{
+    color: #ffffff;
+    font-weight: 500;
+  }
+
+  .group .heading-extention{
+    color: #ffffff;
+    border: 1px solid #2a2a2a;
+    padding: .3rem .5rem ;
+    font-size: .8rem;
+    text-decoration: none;
+  }
+
+  .group .heading-extention:hover{
+    background-color: #2a2a2a;
+  }
+  
+  .date-button-group{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+  }
+
+  .date-button-single{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: none;
+    margin-right: .5em;
+    margin-bottom: .4em;
+    display: inline-block;
+  }
+
+  .active{
+    background-color: #404040;
+    color: white;
+  }
+
+  .date-button-single:hover{
+    background-color: #404040;
+    color: white;
+  }
+
+  .date-group-match-tile{
+    width: 100%;
+    height: 3em;
+    border-radius: 1em;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    margin: .2em 0;
+    margin-bottom: .7em;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  #date-content-1{
+    width: 100%;
+    height: auto;
+    display: none;
+    margin: 0 auto;
+    margin-top: .5em;
+  }
+  #date-content-2{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: none;
+    margin-top: .5em;
+  }
+  #date-content-3{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: none;
+    margin-top: .5em;
+  }
+  #date-content-4{
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+    margin-top: .5em;
+  }
+
+  #date-content-5{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: none;
+    margin-top: .5em;
+  }
+  #date-content-6{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: none;
+    margin-top: .5em;
+  }
+  #date-content-7{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: none;
+    margin-top: .5em;
+  }
+
+  .match-tile-time p{
+    display: inline;
+  }
+
+  .match-tile-tournament p{
+    display: inline;
+  }
+
+  .match-tile-dayNoAmatchNo p{
+    display: inline;
+  }
+  .match-tile-map p{
+    display: inline;
+  }
+
+
+
+  @media(min-width: 1024px) {
+    .container{
+      width: 80%;
+      min-width: 700px;
+      padding: 0px 0px;
+      margin-top: 4em;
+    }
+
+    .article-featured{
+      flex-direction: row;
+    }
+
+    .article-featured-main{
+      flex-basis: 60%;
+    }
+
+    .article-featured-secondary{
+      flex-basis: 40%;
+    }
+
+    .date-button-single{
+      width: 4.5rem;
+      height: 4.5rem;
+      margin-bottom: .5em;
+    }
+
+    .active{
+      background-color: #404040;
+      color: white;
+    }
+  
+    .date-button-single:hover{
+      background-color: #404040;
+      color: white;
+    }
+
+    .date-group-match-tile{
+      height: 4em;
+    }
+  }
