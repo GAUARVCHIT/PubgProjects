@@ -13,8 +13,8 @@ DATABASES = {
     }
 }
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['esportslover.herokuapp.com']
+ALLOWED_HOSTS = ['esportslover.herokuapp.com','127.0.0.1:8000']
 
 django_heroku.settings(locals())
