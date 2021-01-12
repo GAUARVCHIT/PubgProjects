@@ -2,8 +2,6 @@ from .base import *
 import os
 import django_heroku
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
