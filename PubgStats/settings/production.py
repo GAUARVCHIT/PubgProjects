@@ -2,6 +2,8 @@ from .base import *
 import os
 import django_heroku
 
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -13,8 +15,8 @@ DATABASES = {
     }
 }
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['esportslover.herokuapp.com','127.0.0.1:8000']
+ALLOWED_HOSTS = ['esportslover.herokuapp.com']
 
 django_heroku.settings(locals())
